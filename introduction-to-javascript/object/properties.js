@@ -12,9 +12,11 @@ var shoppingCart = {
 // console.log(properties);
 // var propertyValues = Object.values(shoppingCart);
 // console.log(propertyValues);
-// var propertyName = 'pen';
+var propertyName = 'pen';
 // var propertyValue = shoppingCart[propertyName];
 // console.log(propertyName, propertyValue)
 
-shoppingCart['mouse'] = 29;
+// shoppingCart['mouse'] = 29;
+// console.log(shoppingCart);
+shoppingCart[propertyName] = 89;
 console.log(shoppingCart);
