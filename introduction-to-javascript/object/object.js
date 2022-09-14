@@ -25,3 +25,5 @@ var myComputer = {
 }
 
 console.log(myComputer.price);
+myComputer.processor = 'i15';
+console.log(myComputer);
