@@ -32,12 +32,29 @@ function getTheSmallestNumber(numbers) {
 
 }
 
+function reverseWord(str) {
+    const words = str.split(' ');
+
+    const resultArray = [];
+
+    for (i = words.length - 1; i >= 0; i--) {
+        resultArray.push(words[i]);
+    }
+    const reversed = resultArray.join(' ');
+    return reversed;
+
+}
 
 
 
 
-const numbers = [167, 190, 185, 256, 900, 5];
-let largestNumberAfterCalculation = getTheLargestNumber(numbers);
-let smallestNumberAfterCalculation = getTheSmallestNumber(numbers);
-console.log(largestNumberAfterCalculation);
-console.log(smallestNumberAfterCalculation);
+
+// const numbers = [167, 190, 185, 256, 900, 5];
+// let largestNumberAfterCalculation = getTheLargestNumber(numbers);
+// let smallestNumberAfterCalculation = getTheSmallestNumber(numbers);
+// console.log(largestNumberAfterCalculation);
+// console.log(smallestNumberAfterCalculation);
+
+const myString = `i am a good boy`;
+const resultAfterReverse = reverseWord(myString);
+console.log(resultAfterReverse);
