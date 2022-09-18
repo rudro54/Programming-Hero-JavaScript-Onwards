@@ -49,7 +49,9 @@ const fibo = [0, 1];
 for (i = 2; i <= 15; i++) {
     fibo[i] = fibo[i - 1] + fibo[i - 2];
 }
-console.log(fibo);
+// console.log(fibo);
+
+
 
 
 
@@ -60,6 +62,8 @@ console.log(fibo);
 // console.log(largestNumberAfterCalculation);
 // console.log(smallestNumberAfterCalculation);
 
-const myString = `i am a good boy`;
-const resultAfterReverse = reverseWord(myString);
-console.log(resultAfterReverse);
+// const myString = `i am a good boy`;
+// const resultAfterReverse = reverseWord(myString);
+// console.log(resultAfterReverse);
+console.log(Math.floor(13.96));
+console.log('thanks');
