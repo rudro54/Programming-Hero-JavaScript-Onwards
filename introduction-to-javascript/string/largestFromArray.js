@@ -66,4 +66,4 @@ for (i = 2; i <= 15; i++) {
 // const resultAfterReverse = reverseWord(myString);
 // console.log(resultAfterReverse);
 console.log(Math.floor(13.96));
-console.log('thanks');
+console.log('thanks to you all');
