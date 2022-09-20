@@ -8,7 +8,9 @@ rest 90 taka per pcs
 if more than 200 tickets -> 
 first 100 -> 100 taka per pcs
 101-200 -> 90 taka per pcs
-200+ 70 taka per pcs
+200+--> 70 taka per pcs
+
+ 
 
 
 
