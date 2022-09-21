@@ -13,6 +13,7 @@ function radianToDegree(radianValue) {
 }
 
 
+
 // answer to question number two 
 
 function isJavaScriptFile(fileName) {
@@ -29,6 +30,7 @@ function isJavaScriptFile(fileName) {
         return false;
     }
 }
+
 
 
 
@@ -61,7 +63,7 @@ function oilPrice(dieselQuantity, petrolQuantity, octaneQuantity) {
 function publicBusFare(totalPassengers) {
 
     if (isNaN(totalPassengers)) {
-        throw new Error('Please note your parameter must be a numeric one');
+        throw new Error('Please note your parameter should be a numeric one');
     } // validation if the parameter is taking numeric value or not
 
     let restPeopleAfterPrivateBus = totalPassengers % 50; // remainder after all busses are full.
@@ -70,11 +72,12 @@ function publicBusFare(totalPassengers) {
 
 
 
+
 // answer to question number five 
 
 function isBestFriend(firstFriend, secondFriend) {
 
-    if ((typeof firstFriend == 'object') && (typeof secondFriend == 'object')) {
+    if ((typeof firstFriend == 'object') && (typeof secondFriend == 'object')) { // checking if object
 
         if ((firstFriend.name === secondFriend.friend) && (firstFriend.friend === secondFriend.name)) {
             return true;
