@@ -34,18 +34,18 @@ function isJavaScriptFile(fileName) {
 
 // answer to question number three 
 
-function oilPrice(dieseltQuantity, petrolQuantity, octaneQuantity) {
+function oilPrice(dieselQuantity, petrolQuantity, octaneQuantity) {
 
     if (arguments.length != 3) {  // to check if 3 arguments are passed correctly
         throw new Error('You must provide three separate parameters');
     }
-    else if (isNaN(dieseltQuantity) || isNaN(petrolQuantity) || isNaN(octaneQuantity)) {
+    else if (isNaN(dieselQuantity) || isNaN(petrolQuantity) || isNaN(octaneQuantity)) {
         throw new Error('All of your parameters must be numeric ones as they are quantities');
     }
 
 
 
-    let dieselAmount = dieseltQuantity * 114; // diesel price 114 taka per unit
+    let dieselAmount = dieselQuantity * 114; // diesel price 114 taka per unit
     let petrolAmount = petrolQuantity * 130; // petrol price 130 taka per unit
     let octaneAmount = octaneQuantity * 135; // octane price 135 taka per unit
 
@@ -74,12 +74,7 @@ function publicBusFare(totalPassengers) {
 
 function isBestFriend(firstFriend, secondFriend) {
 
-    if (arguments.length != 2) {  // to check if 2 arguments are passed correctly
-        throw new Error('You must provide two separate parameters');
-    }
-    else if (typeof firstFriend != 'Object' && typeof secondFriend !== 'Object') {
-        throw new Error('You must provide two separate objects'); // to check if 2 arguments are objects 
-    }
+
 
 
     if ((firstFriend.name === secondFriend.friend) && (firstFriend.friend === secondFriend.name)) {
@@ -88,6 +83,9 @@ function isBestFriend(firstFriend, secondFriend) {
     else {
         return false;
     }
+
+
+
 
 
 }
