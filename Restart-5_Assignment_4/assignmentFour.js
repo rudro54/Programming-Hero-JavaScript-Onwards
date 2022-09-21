@@ -40,7 +40,7 @@ function oilPrice(dieseltQuantity, petrolQuantity, octaneQuantity) {
         throw new Error('You must provide three separate parameters');
     }
     else if (isNaN(dieseltQuantity) || isNaN(petrolQuantity) || isNaN(octaneQuantity)) {
-        throw new Error('All of your parameters must be numeric ones');
+        throw new Error('All of your parameters must be numeric ones as they are quantities');
     }
 
 
@@ -64,8 +64,8 @@ function publicBusFare(totalPassengers) {
         throw new Error('your parameter must be a numeric one');
     } // validation if the parameter is taking numeric value or not
 
-    let restPeopleAfterPrivateBus = totalPassengers % 50; // remainder of 50 person per each bus goers 
-    return (restPeopleAfterPrivateBus % 11) * 250;  // remainder of 11 person per each micro-goers times fare
+    let restPeopleAfterPrivateBus = totalPassengers % 50; // remainder after all busses are full.
+    return (restPeopleAfterPrivateBus % 11) * 250;  //  restPeople after micro by using modulus 11 times 250
 }
 
 
