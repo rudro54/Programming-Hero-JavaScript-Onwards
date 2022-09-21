@@ -486,14 +486,17 @@ function oilPrice(dieseltQuantity, petrolQuantity, octaneQuantity) {
 // answer to question number four 
 
 function publicBusFare(totalPassengers) {
-    let numberOfBusPassengers = totalPassengers / 50;
-    let numberOfMicroPassengers = totalPassengers % 50;
-    let numberOfPublicTransportPassengers = numberOfMicroPassengers % 11;
-
-    return numberOfPublicTransportPassengers * 250;
-
+    let restPeopleAfterPrivateBus = totalPassengers % 50; // remainder of 50 person per each bus goers 
+    return (restPeopleAfterPrivateBus % 11) * 250;  // remainder of 11 person per each micro-goers times fare
 }
 
+console.log(publicBusFare(365));
+
+// answer to question number five 
+
+function isBestFriend(firstFriend, secondFriend) {
+
+}
 
 
 
