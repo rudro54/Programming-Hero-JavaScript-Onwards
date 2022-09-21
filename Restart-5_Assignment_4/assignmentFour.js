@@ -77,7 +77,7 @@ function isBestFriend(firstFriend, secondFriend) {
     if (arguments.length != 2) {  // to check if 2 arguments are passed correctly
         throw new Error('You must provide two separate parameters');
     }
-    else if (typeof firstFriend !== Object && typeof secondFriend !== Object) {
+    else if (typeof firstFriend != 'Object' && typeof secondFriend !== 'Object') {
         throw new Error('You must provide two separate objects'); // to check if 2 arguments are objects 
     }
 
