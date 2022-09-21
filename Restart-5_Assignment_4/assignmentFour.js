@@ -193,6 +193,28 @@ Output
 
 1000
 
+50
+
+55
+
+112
+
+235
+
+365
+
+0
+
+1250
+
+250
+
+500
+
+1000
+
+
+
 
 
 
@@ -460,6 +482,18 @@ function oilPrice(dieseltQuantity, petrolQuantity, octaneQuantity) {
     return totalAmount;
 
 }
+
+// answer to question number four 
+
+function publicBusFare(totalPassengers) {
+    let numberOfBusPassengers = totalPassengers / 50;
+    let numberOfMicroPassengers = totalPassengers % 50;
+    let numberOfPublicTransportPassengers = numberOfMicroPassengers % 11;
+
+    return numberOfPublicTransportPassengers * 250;
+
+}
+
 
 
 
