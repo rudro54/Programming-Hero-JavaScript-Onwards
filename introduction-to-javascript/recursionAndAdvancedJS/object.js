@@ -23,4 +23,5 @@ const nayok = {
 }
 
 // console.log(nayok);
+console.log(nayok.act)
 nayok.act();
