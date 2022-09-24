@@ -38,5 +38,20 @@ section.appendChild(ul);
 mainContainer.appendChild(section);
 
 
-// set inner html directly 
+// set inner html directly  there will be no hints while writing html codes 
 
+const sectionDress = document.createElement('section');
+sectionDress.innerHTML = `
+
+  <h1>My Favorite Dress </h1>
+  <ul>
+     <li>T-shirt</li>
+     <li>Jeans</li> 
+     <li>Sunglass</li>  
+  
+  
+  </ul>
+
+`
+
+mainContainer.appendChild(sectionDress);
