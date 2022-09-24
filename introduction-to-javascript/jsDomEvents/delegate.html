@@ -9,7 +9,40 @@
 </head>
 
 <body>
+    <h1>Explore Event Delegate</h1>
+    <section>
+        <ul id="list-container">
+            <li class="item">Lorem, ipsum dolor.</li>
+            <li class="item">Unde, eligendi mollitia!</li>
+            <li class="item">Vitae, nostrum porro!</li>
+            <li class="item">Exercitationem, minima vel.</li>
+            <li class="item">Aperiam, labore reprehenderit?</li>
+            <li class="item">Ad, maiores deserunt.</li>
+        </ul>
+        <button id="btn-add-item">Add Item</button>
+    </section>
 
+    <script>
+        // const items = document.getElementsByClassName('item');
+        // for (const item of items) {
+        //     item.addEventListener('click', function (event) {
+        //         event.target.parentNode.removeChild(event.target);
+        //     });
+        // }
+
+        document.getElementById('list-container').addEventListener('click', function (event) {
+            event.target.parentNode.removeChild(event.target);
+        })
+
+        document.getElementById('btn-add-item').addEventListener('click', function () {
+            const listContainer = document.getElementById('list-container');
+            const li = document.createElement('li');
+            li.innerText = 'Brand new item added';
+            li.classList.add('item');
+            listContainer.appendChild(li);
+
+        });
+    </script>
 </body>
 
 </html>
