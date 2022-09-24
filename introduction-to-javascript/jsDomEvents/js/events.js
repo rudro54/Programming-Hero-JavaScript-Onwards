@@ -6,7 +6,7 @@ console.log('this is a separate js file');
 // <button onclick="document.body.style.backgroundColor='yellow'">Make Yellow</button>
 
 // option 2 : add onclick function 
-// <!-- option 2 -->
+// <!-- option 2 --> will be used rarely but important 
 // <button onclick="makeRed()">Make Red</button>
 
 function makeRed() {
@@ -47,7 +47,7 @@ function makeTomato() {
 }
 
 // option 4 b 
-//  <!-- option 4 b  -->
+//  <!-- option 4 b  --> mostly used
 //  <button id="make-green">Make Green</button>
 
 const makeGreentButton = document.getElementById('make-green');
@@ -55,5 +55,16 @@ makeGreentButton.addEventListener('click', function makeGreen() {
 
     document.body.style.backgroundColor = 'Green';
 });
+
+// option 4 final 
+
+// <!-- option 4 final all time use one  -->
+
+// <button id="make-goldenRod">Make GoldenRod</button>
+
+
+document.getElementById('make-goldenRod').addEventListener('click', function () {
+    document.body.style.backgroundColor = 'goldenrod';
+})
 
 
