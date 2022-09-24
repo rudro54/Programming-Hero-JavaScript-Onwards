@@ -13,22 +13,30 @@ const mainContainer = document.getElementById('main-container');
 // console.log(mainContainer); // no string here, just to check if working properly
 
 //2. what to be added
+
 const section = document.createElement('section');
 const h1 = document.createElement('h1');
 h1.innerText = 'My Food List';
 section.appendChild(h1);
+
 const ul = document.createElement('ul');
-const li1 = document.createElement('li1');
+
+const li1 = document.createElement('li');
 li1.innerText = 'biriyani';
 ul.appendChild(li1);
 
-const li2 = document.createElement('li2');
-li1.innerText = 'Kabab';
+const li2 = document.createElement('li');
+li2.innerText = 'kabab';
 ul.appendChild(li2);
 
-const li3 = document.createElement('li3');
-li1.innerText = 'Hummus';
+const li3 = document.createElement('li');
+li3.innerText = 'hummus';
 ul.appendChild(li3);
+
 
 section.appendChild(ul);
 mainContainer.appendChild(section);
+
+
+// set inner html directly 
+
