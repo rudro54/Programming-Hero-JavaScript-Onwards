@@ -13,13 +13,28 @@
     <button onclick="console.log(7)">Click Me!</button>
     <button onclick="console.log(65)">Another Button</button>
     <br>
+    <!-- option 1 -->
     <button onclick="document.body.style.backgroundColor='yellow'">Make Yellow</button>
+    <!-- option 2 -->
     <button onclick="makeRed()">Make Red</button>
+    <!-- option 3 a -->
     <button id="make-pink">Make Pink</button>
+    <!-- option 3 b -->
     <button id="make-purple">Make Purple</button>
+    <!-- option 4  a -->
+    <button id="make-tomato">Make Tomato</button>
+
+    <!-- option 4 b  -->
+    <button id="make-green">Make Green</button>
 
     <script src="js/events.js"></script>
     <script>
+
+        const makeGreentButton = document.getElementById('make-green');
+        makeGreentButton.addEventListener('click', function makeGreen() {
+
+            document.body.style.backgroundColor = 'Green';
+        });
 
     </script>
 
