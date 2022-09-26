@@ -33,23 +33,24 @@
         </section>
         <!-- deposit and withdraw -->
         <section class="mt-12">
-            <div class="grid grid-cols-2 gap-4 w-9/12 mx-auto text-white ">
+            <div class="grid grid-cols-2 gap-4 w-9/12 mx-auto">
+                <!-- this text white will enhirt to everything and we wont be able to see the input text -->
                 <div class="bg-fuchsia-400 p-8 rounded-xl">
-                    <h4 class="text-2xl mb-4 text-center">Please Deposite</h4>
-                    <input class="w-9/12 block mb-4 px-5 mx-auto text-center" type="email" name="" id="user-email"
+                    <h4 class="text-2xl mb-4 text-center text-white">Please Deposite</h4>
+                    <input class="w-9/12 block mb-4 px-5 mx-auto text-center" type="text" name="" id="deposit-field"
                         placeholder="$ amount you want to deposit ">
                     <div class="text-center">
                         <button id="btn-deposit"
-                            class="bg-amber-600 hover:bg-sky-700 px-8 py-2 text-white font-medium rounded-lg text-center">Deposit</button>
+                            class="bg-amber-600 hover:bg-sky-700 px-8 py-2 text-white font-medium rounded-lg text-center text-white">Deposit</button>
                     </div>
                 </div>
                 <div class="bg-sky-400 p-8 rounded-xl">
-                    <h4 class="text-2xl">Please Withdraw</h4>
-                    <input class="w-9/12 block mb-4 px-5 mx-auto text-center" type="email" name="" id="user-email"
+                    <h4 class="text-2xl mb-4 text-center text-white">Please Withdraw</h4>
+                    <input class="w-9/12 block mb-4 px-5 mx-auto text-center" type="text" name="" id="withdraw-field"
                         placeholder="$ amount you want to withdraw ">
                     <div class="text-center">
                         <button id="btn-withdraw"
-                            class="bg-amber-600 hover:bg-sky-700 px-8 py-2 text-white font-medium rounded-lg text-center">Withdraw</button>
+                            class="bg-amber-600 hover:bg-sky-700 px-8 py-2 text-white font-medium rounded-lg text-center text-white">Withdraw</button>
                     </div>
                 </div>
 
@@ -57,7 +58,7 @@
 
         </section>
     </main>
-
+    <script src="js/deposit.js"></script>
 </body>
 
 </html>
