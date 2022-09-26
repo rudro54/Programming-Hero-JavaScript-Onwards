@@ -20,13 +20,13 @@ document.getElementById('btn-submit').addEventListener('click', function () {
     // Danger : do not compare or verify email password on the client side, this will got to server side  
     // we will learn that later but for learning we are doin this right now. 
 
-    // stp 4 : verify email and password 
+    // stp 4 : verify email and password and check valid user or not
 
     if (email === 'sontan@baap.com' && passowrd === 'secret') {
-        console.log('valid user');
+        window.location.href = 'bank.html';
     }
     else {
-        console.log('invalid user');
+        alert('either email or password given is wrong . you wont be able to enter')
     }
 
 });
