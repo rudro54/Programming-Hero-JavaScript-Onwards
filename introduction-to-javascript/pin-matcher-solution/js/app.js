@@ -26,7 +26,7 @@ document.getElementById('generate-pin').addEventListener('click', function () {
 
 });
 
-document.getElementById('calculator'); addEventListener('click', function (event) {
+document.getElementById('calculator').addEventListener('click', function (event) {
     const number = event.target.innerText;
     const typedNumberField = document.getElementById('typed-numbers');
     const previousTypedNumber = typedNumberField.value;
