@@ -18,6 +18,7 @@ document.getElementById('add-friend').addEventListener('click', function () {
 
     const friendContainer = document.getElementById('friends');
     const friend = document.createElement('div');
+    friend.classLis.add('friend');
     friend.innerHTML = `
     <h3 class="friend-name">New Friend</h3>
     <p>New friend added</p>
