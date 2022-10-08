@@ -24,6 +24,8 @@ const makeTriple = x => x * 3;
 // multi line arrow function 
 // for multi lines arrow function if you need to return you have to write return like before 
 // using second bracket means multi line arrow so need to declare return if necessary
+// arrow function does not have their own this.
+// dont use duplicate parameter name anywhere but in arrow function this will show error
 
 const doMath = (x, y, z) => {
     const firstSum = x + y;
