@@ -36,4 +36,5 @@ const elementHTML = `
 
 // arrow function 
 // spread 
-// destructuring
+// destructuring you have to keep same name of variable as the object but for array you dont need
+// ...c rest can be done here 
