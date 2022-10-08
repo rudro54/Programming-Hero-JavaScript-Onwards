@@ -44,3 +44,10 @@ const nayoks = ['shakib', 'bappa', 'raj'];
 const [king, lost, notun] = nayoks;
 console.log(notun);
 
+function getNames() {
+    return ['Alim', 'Halim'];
+}
+
+const [baba, chacha] = getNames();
+console.log(chacha, baba);
+
