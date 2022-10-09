@@ -16,5 +16,5 @@ const math = student.marks.math;
 const chemistry = student['marks']['chemistry'];
 console.log(chemistry);
 const subject = 'math';
-const subjectMarks = student.marks[subject];
+const subjectMarks = student.marks[subject]; // you cant acces if you use subject by dot
 console.log(subjectMarks);
