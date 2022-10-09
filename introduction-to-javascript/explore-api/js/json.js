@@ -32,6 +32,8 @@ console.log(shop);
 
 const shopJSON = JSON.stringify(shop);
 console.log(shopJSON);
+const shopObj = JSON.parse(shopJSON);
+console.log(shopObj);
 
 // type of shop is object
 // type of shopJSON is string
