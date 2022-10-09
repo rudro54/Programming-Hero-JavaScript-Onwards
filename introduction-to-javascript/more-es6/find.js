@@ -1,15 +1,6 @@
-const friends = ['Tom Hanks', 'Tom Cruize', 'Tom Brady', 'Tom Solaiman'];
-// no return for forEach
+const numbers = [12, 5, 23, 45, 11, 18, 9, 55, 61, 1];
 
-friends.forEach(freind => console.log(freind));
-
-// multiline forEach
-
-
-
-
-
-
+// find will show only the first one that matched
 
 const products = [
 
@@ -19,4 +10,3 @@ const products = [
     { id: 4, name: 'tablet', price: 23000 }
 
 ];
-
