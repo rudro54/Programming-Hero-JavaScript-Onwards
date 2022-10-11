@@ -6,6 +6,9 @@ const loadMeals = () => {
 }
 
 const displayMeals = meals => {
-    console.log(meals);
+    const mealsContainer = document.getElementById('meal-container');
+    meals.forEach(meal => {
+        console.log(meal);
+    });
 }
 loadMeals();
