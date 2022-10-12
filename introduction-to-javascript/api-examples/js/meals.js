@@ -15,7 +15,7 @@ const displayMeals = meals => {
         console.log(meal);
         mealDiv.innerHTML = `
         
-        <div class="card">
+        <div onclick = "loadMealDetails(${meal.strMeal})" class="card">
             <img src="${meal.strMealThumb}" class="card-img-top" alt="...">
         <div class="card-body">
             <h5 class="card-title">${meal.strMeal}</h5>
@@ -33,5 +33,10 @@ const searchFood = () => {
     const searchText = searchField.value;
     loadMeals(searchText);
     searchField.value = '';
+}
+
+const loadMealDetails = (idMeal) => {
+    // console.log('get details of id',idMeal);
+
 }
 
