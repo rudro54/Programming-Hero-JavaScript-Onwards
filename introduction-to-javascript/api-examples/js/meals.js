@@ -12,10 +12,10 @@ const displayMeals = meals => {
     meals.forEach(meal => {
         const mealDiv = document.createElement('div');
         mealDiv.classList.add('col');
-        console.log(meal);
+        //console.log(meal);
         mealDiv.innerHTML = `
         
-        <div onclick = "loadMealDetails(${meal.strMeal})" class="card">
+        <div onclick = "loadMealDetails(${meal.idMeal})" class="card">
             <img src="${meal.strMealThumb}" class="card-img-top" alt="...">
         <div class="card-body">
             <h5 class="card-title">${meal.strMeal}</h5>
@@ -36,7 +36,31 @@ const searchFood = () => {
 }
 
 const loadMealDetails = (idMeal) => {
-    // console.log('get details of id',idMeal);
+    //console.log('get details of id', idMeal);
+    const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${idMeal}`; // 
+    // you will get error if you forget to put https ://
+    //console.log(url);
+    fetch(url)
+        .then(res => res.json())
+        .then(data => displayMealDetaisl(data.meals[0]))
 
 }
 
+const displayMealDetaisl = meals => {
+    const detailedContainer = document.getElementById('detailed-container');
+    const mealDiv = document.createElement('div');
+    mealDiv.classList.add('card');
+    mealDiv.innerHTML = `
+    <img src="..." class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+            the card's content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+   
+   
+   `;
+}
+
+loadMeals('');
