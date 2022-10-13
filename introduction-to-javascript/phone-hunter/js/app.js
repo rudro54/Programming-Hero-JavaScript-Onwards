@@ -112,6 +112,18 @@ const displayPhones = phones => {
     //console.log(phones); // to check for first time then its deactivated
     const phonesContainer = document.getElementById('phone-container');
     phonesContainer.innerText = ``; // so that previous appended ones not visible
+    // display only 20 phones 
+    phones = phones.slice(0, 20)
+    // display no phone found
+    const noPhone = document.getElementById('not-found-message');
+    // no phone found means phones array length is 0
+    if (phones.length === 0) {
+        noPhone.classList.remove('d-none');
+    }
+    else {
+        noPhone.classList.add('d-none');
+    }
+    // display all phones
     // now use for each to display each phones 
     phones.forEach(phone => {
         const phoneDiv = document.createElement('div');
@@ -153,12 +165,28 @@ const displayPhones = phones => {
 // so far fetch data is not dynamic so to make it dynamic do the foloowing 
 // const loadPhone = async (searchText) => {  change
 //  const url = `https://openapi.programming-hero.com/api/phones?search=${searchText}`;
+// if you want to add one functionality that if you search stupidly there 
+// will be a warning message then you need  to add a div and display none 
+// that will be visible with some logic  
+// if you write stupid and check in the network fetch dfd field you will see
+//?search=undefined	Fetchphones?search=dfd	Fetchphones?search=dfd	
+
+// data
+// : 
+// [] -> this is an empty array
+// status
+// : 
+// false
+// go to displayPhone function to put logic using the d-none class
+// adding spinner or loader in the file
 
 
 document.getElementById('btn-search').addEventListener('click', function () {
     // now you need to check what is written in the input text field 
     // so add one id there 
     // input  field works with value
+    // if you type a lots of things will be showing 
+    // to eliminate this got to displayPhones function and use slice 
 
     const inputField = document.getElementById('input-field');
     const searchText = inputField.value; // to make the search dynamic 
@@ -170,4 +198,4 @@ document.getElementById('btn-search').addEventListener('click', function () {
 
 })
 
-loadPhone(); // calling the function
+//loadPhone(); // calling the function
