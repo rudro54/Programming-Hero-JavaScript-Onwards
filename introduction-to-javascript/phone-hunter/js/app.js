@@ -111,7 +111,21 @@ loadPhone(); // calling the function
 // you can see its object and have two properties status and data
 // we need the data 
 const displayPhones = phones => {
-    console.log(phones);
+    //console.log(phones); // to check for first time then its deactivated
+    const phonesContainer = document.getElementById('phone-container');
+    // now use for each to display each phones 
+    phones.forEach(phone => {
+        const phoneDiv = document.createElement('div');
+        // you need to add the col class from that card
+        phoneDiv.classList.add('col');
+
+
+
+    })
 }
 
 // now for showing the phone we are using bootstrap cards 
+// we dont need all so we will delete all and keep one card to use in js
+// and for showing that we need to create element where we will show
+// that will be inside display function
+// writing forEach could be tricky in the arrow function inside bracket of for each
