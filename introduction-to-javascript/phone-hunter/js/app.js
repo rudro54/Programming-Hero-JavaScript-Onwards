@@ -3,13 +3,15 @@ const loadPhone = async () => {
     // this is a static one, we will do this dynamic later
     const res = await fetch(url);
     const data = await res.json();
-    console.log(data);
+    displayPhones(data.data); // then we can see array of object 
 
 }
 loadPhone(); // calling the function
+
+
 // for checking go to the page inspect network tab you can see that fetched data are object
 /*
- {
+ {  for seeing this we need to go data.data as object
     "status": true, -> object and array inside one key of object data
     "data": [
         {
@@ -108,3 +110,8 @@ loadPhone(); // calling the function
 // for advanced checking go to network tab by clicking filter > fetch / XHR
 // you can see its object and have two properties status and data
 // we need the data 
+const displayPhones = phones => {
+    console.log(phones);
+}
+
+// now for showing the phone we are using bootstrap cards 
