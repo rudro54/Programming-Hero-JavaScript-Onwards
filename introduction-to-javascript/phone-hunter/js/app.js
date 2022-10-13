@@ -6,14 +6,12 @@ const loadPhone = async () => {
     displayPhones(data.data); // then we can see array of object 
 
 }
-loadPhone(); // calling the function
-
 
 // for checking go to the page inspect network tab you can see that fetched data are object
 /*
  {  for seeing this we need to go data.data as object
     "status": true, -> object and array inside one key of object data
-    "data": [
+    "data": [ already selected displayPhones(data.data);
         {
             "brand": "Apple ",
             "phone_name": "iPhone 13 mini",
@@ -117,15 +115,47 @@ const displayPhones = phones => {
     phones.forEach(phone => {
         const phoneDiv = document.createElement('div');
         // you need to add the col class from that card
+        // cause you just made the col div
         phoneDiv.classList.add('col');
+        phoneDiv.innerHTML = `
+        
+        <div class="card p-4"> 
+        <img src="${phone.image}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">${phone.phone_name}</h5>
+            <p class="card-text">This is a longer card with supporting text below as a natural
+                lead-in to additional content. This content is a little bit longer.</p>
+        </div>
+        </div>
+        
+        `;
+
+        phonesContainer.appendChild(phoneDiv);
 
 
 
     })
 }
 
+
+
+
+
+
+
+loadPhone(); // calling the function
+
 // now for showing the phone we are using bootstrap cards 
 // we dont need all so we will delete all and keep one card to use in js
 // and for showing that we need to create element where we will show
 // that will be inside display function
 // writing forEach could be tricky in the arrow function inside bracket of for each
+// data we already have selected by data.data so now phone.image is the way to 
+// select photo
+// we can make this dynamic by adding search functionality as given in repository
+// from bootstrap take the search input from form section
+// btn-search id is created for search button
+// we need to add event handler
+
+
+
