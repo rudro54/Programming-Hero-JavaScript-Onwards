@@ -178,7 +178,10 @@ const displayPhones = phones => {
 // : 
 // false
 // go to displayPhone function to put logic using the d-none class
-// adding spinner or loader in the file
+// adding spinner or loader in the file go to bootstrap for that
+// add a section for adding spinners
+// if you do not put any logic spinner will always be there 
+// this will be handled by when searching starts and ends
 
 
 document.getElementById('btn-search').addEventListener('click', function () {
