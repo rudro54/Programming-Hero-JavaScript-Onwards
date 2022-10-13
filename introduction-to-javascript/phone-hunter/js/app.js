@@ -162,6 +162,64 @@ const displayPhones = (phones, dataLimit) => {
 }
 
 
+const processSearch = (dataLimit) => {
+    toggleSpinner(true);
+    const inputField = document.getElementById('input-field');
+    const searchText = inputField.value; // to make the search dynamic 
+    loadPhone(searchText, dataLimit);
+}
+
+
+// handle search button click
+document.getElementById('btn-search').addEventListener('click', function () {
+    // start loader
+    processSearch(10);
+    // now you need to check what is written in the input text field 
+    // so add one id there 
+    // input  field works with value
+    // if you type a lots of things will be showing 
+    // to eliminate this got to displayPhones function and use slice 
+
+})
+
+// search input field enter key handler remember this is input field enter not button
+
+document.getElementById('input-field').addEventListener('keypress', function (e) {
+    //console.log(e.key); show all what i write
+    if (e.key === 'Enter') {
+        processSearch();
+    }
+
+})
+
+
+const toggleSpinner = isLoading => {
+    const loaderSection = document.getElementById('loader');
+    if (isLoading) {
+        loaderSection.classList.remove('d-none');
+    }
+    else {
+        loaderSection.classList.add('d-none');
+    }
+}
+
+// not the best way to show all just for current api limitation we are doing this
+document.getElementById('btn-show-all').addEventListener('click', function () {
+    processSearch();
+})
+
+const loadPhoneDetails = async id => {
+    const url = `https://openapi.programming-hero.com/api/phone/${id}`;
+    const res = await fetch(url);
+    const data = await res.json();
+    console.log(data.data);
+}
+
+
+//loadPhone(); // calling the function
+
+
+
 // now for showing the phone we are using bootstrap cards 
 // we dont need all so we will delete all and keep one card to use in js
 // and for showing that we need to create element where we will show
@@ -217,58 +275,5 @@ const displayPhones = (phones, dataLimit) => {
 //<button onclick="loadPhoneDetails('${phone.slug}')" href="#" class = "btn btn-primary">Show Details</button>  
 // now check by clicking and inspecting the button if they recieve the slug value 
 // google search javascript input field enter key event handler
+// will use modal for show details
 
-const processSearch = (dataLimit) => {
-    toggleSpinner(true);
-    const inputField = document.getElementById('input-field');
-    const searchText = inputField.value; // to make the search dynamic 
-    loadPhone(searchText, dataLimit);
-}
-
-
-
-
-// handle search button click
-document.getElementById('btn-search').addEventListener('click', function () {
-    // start loader
-    processSearch(10);
-
-
-    // now you need to check what is written in the input text field 
-    // so add one id there 
-    // input  field works with value
-    // if you type a lots of things will be showing 
-    // to eliminate this got to displayPhones function and use slice 
-
-
-})
-
-// search input field enter key handler remember this is input field enter not button
-
-
-
-
-const toggleSpinner = isLoading => {
-    const loaderSection = document.getElementById('loader');
-    if (isLoading) {
-        loaderSection.classList.remove('d-none');
-    }
-    else {
-        loaderSection.classList.add('d-none');
-    }
-}
-
-// not the best way to show all just for current api limitation we are doing this
-document.getElementById('btn-show-all').addEventListener('click', function () {
-    processSearch();
-})
-
-const loadPhoneDetails = async id => {
-    const url = `https://openapi.programming-hero.com/api/phone/${id}`;
-    const res = await fetch(url);
-    const data = await res.json();
-    console.log(data.data);
-}
-
-
-//loadPhone(); // calling the function
