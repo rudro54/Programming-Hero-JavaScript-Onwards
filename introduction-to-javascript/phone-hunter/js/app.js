@@ -147,7 +147,11 @@ const displayPhones = phones => {
 
 
 
-    })
+
+    });
+
+    // stop spinner / loader
+    toggleSpinner(false);
 }
 
 
@@ -182,9 +186,18 @@ const displayPhones = phones => {
 // add a section for adding spinners
 // if you do not put any logic spinner will always be there 
 // this will be handled by when searching starts and ends
+// by default d-none will suffice
+// if you need to show something or unshow that is called toggle
 
-
+// handle search button click
 document.getElementById('btn-search').addEventListener('click', function () {
+    // start loader
+    toggleSpinner(true);
+
+
+
+
+
     // now you need to check what is written in the input text field 
     // so add one id there 
     // input  field works with value
@@ -200,5 +213,16 @@ document.getElementById('btn-search').addEventListener('click', function () {
 
 
 })
+
+
+const toggleSpinner = isLoading => {
+    const loaderSection = document.getElementById('loader');
+    if (isLoading) {
+        loaderSection.classList.remove('d-none');
+    }
+    else {
+        loaderSection.classList.add('d-none');
+    }
+}
 
 //loadPhone(); // calling the function
