@@ -1,9 +1,9 @@
-const loadPhone = async (searchText) => {
+const loadPhone = async (searchText, dataLimit) => {
     const url = `https://openapi.programming-hero.com/api/phones?search=${searchText}`;
     // this is a static one, we will do this dynamic later
     const res = await fetch(url);
     const data = await res.json();
-    displayPhones(data.data); // then we can see array of object 
+    displayPhones(data.data, dataLimit); // then we can see array of object 
 
 }
 
@@ -108,13 +108,13 @@ const loadPhone = async (searchText) => {
 // for advanced checking go to network tab by clicking filter > fetch / XHR
 // you can see its object and have two properties status and data
 // we need the data 
-const displayPhones = phones => {
+const displayPhones = (phones, dataLimit) => {
     //console.log(phones); // to check for first time then its deactivated
     const phonesContainer = document.getElementById('phone-container');
     phonesContainer.innerText = ``; // so that previous appended ones not visible
     // display only 10 phones 
     const showAll = document.getElementById('show-all');
-    if (phones.length > 10) {
+    if (dataLimit && phones.length > 10) {
         phones = phones.slice(0, 10);
         showAll.classList.remove('d-none');
     }
@@ -146,14 +146,14 @@ const displayPhones = phones => {
         <div class="card-body">
             <h5 class="card-title">${phone.phone_name}</h5>
             <p class="card-text">This is a longer card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit longer.</p>
+            lead-in to additional content. This content is a little bit longer.</p>
+            <button onclick="loadPhoneDetails('${phone.slug}')" href="#" class = "btn btn-primary">Show Details</button>    
         </div>
         </div>
         
         `;
 
         phonesContainer.appendChild(phoneDiv);
-
 
     });
 
@@ -206,14 +206,32 @@ const displayPhones = phones => {
 // we will use just for now a third approach just for our limitation
 // third way is recall the whole bunch when clicking the show all button
 // and removing the old 10 only 
+// so the idea is when clicking on search the dataLimit is 10 so slice will work
+// and when the show all button is clicked there is no data limit and as there 
+// is no data limit it will not activate the slice 
+// for showing phone details we need id but in this api there is slug not id
+// so check the phone details url or api by putting slug over there
+// add click handler in the button and as slug is a string so it must be 
+// inside a '' in the dynamic string 
+// button onclick="loadPhoneDetails( this parameter will be a dynamic one)"
+//<button onclick="loadPhoneDetails('${phone.slug}')" href="#" class = "btn btn-primary">Show Details</button>  
+// now check by clicking and inspecting the button if they recieve the slug value 
+// google search javascript input field enter key event handler
+
+const processSearch = (dataLimit) => {
+    toggleSpinner(true);
+    const inputField = document.getElementById('input-field');
+    const searchText = inputField.value; // to make the search dynamic 
+    loadPhone(searchText, dataLimit);
+}
+
+
+
 
 // handle search button click
 document.getElementById('btn-search').addEventListener('click', function () {
     // start loader
-    toggleSpinner(true);
-
-
-
+    processSearch(10);
 
 
     // now you need to check what is written in the input text field 
@@ -222,15 +240,12 @@ document.getElementById('btn-search').addEventListener('click', function () {
     // if you type a lots of things will be showing 
     // to eliminate this got to displayPhones function and use slice 
 
-    const inputField = document.getElementById('input-field');
-    const searchText = inputField.value; // to make the search dynamic 
-    loadPhone(searchText);
-
-
-
-
 
 })
+
+// search input field enter key handler remember this is input field enter not button
+
+
 
 
 const toggleSpinner = isLoading => {
@@ -242,5 +257,18 @@ const toggleSpinner = isLoading => {
         loaderSection.classList.add('d-none');
     }
 }
+
+// not the best way to show all just for current api limitation we are doing this
+document.getElementById('btn-show-all').addEventListener('click', function () {
+    processSearch();
+})
+
+const loadPhoneDetails = async id => {
+    const url = `https://openapi.programming-hero.com/api/phone/${id}`;
+    const res = await fetch(url);
+    const data = await res.json();
+    console.log(data.data);
+}
+
 
 //loadPhone(); // calling the function
