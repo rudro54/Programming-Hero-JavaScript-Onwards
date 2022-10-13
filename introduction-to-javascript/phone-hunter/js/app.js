@@ -111,6 +111,7 @@ const loadPhone = async (searchText) => {
 const displayPhones = phones => {
     //console.log(phones); // to check for first time then its deactivated
     const phonesContainer = document.getElementById('phone-container');
+    phonesContainer.innerText = ``; // so that previous appended ones not visible
     // now use for each to display each phones 
     phones.forEach(phone => {
         const phoneDiv = document.createElement('div');
@@ -161,6 +162,8 @@ document.getElementById('btn-search').addEventListener('click', function () {
 
     const inputField = document.getElementById('input-field');
     const searchText = inputField.value; // to make the search dynamic 
+    loadPhone(searchText);
+
 
 
 
