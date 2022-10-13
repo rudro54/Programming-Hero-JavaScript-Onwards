@@ -1,5 +1,5 @@
-const loadPhone = async () => {
-    const url = `https://openapi.programming-hero.com/api/phones?search=iphone`;
+const loadPhone = async (searchText) => {
+    const url = `https://openapi.programming-hero.com/api/phones?search=${searchText}`;
     // this is a static one, we will do this dynamic later
     const res = await fetch(url);
     const data = await res.json();
@@ -138,13 +138,6 @@ const displayPhones = phones => {
 }
 
 
-
-
-
-
-
-loadPhone(); // calling the function
-
 // now for showing the phone we are using bootstrap cards 
 // we dont need all so we will delete all and keep one card to use in js
 // and for showing that we need to create element where we will show
@@ -156,6 +149,22 @@ loadPhone(); // calling the function
 // from bootstrap take the search input from form section
 // btn-search id is created for search button
 // we need to add event handler
+// so far fetch data is not dynamic so to make it dynamic do the foloowing 
+// const loadPhone = async (searchText) => {  change
+//  const url = `https://openapi.programming-hero.com/api/phones?search=${searchText}`;
+
+
+document.getElementById('btn-search').addEventListener('click', function () {
+    // now you need to check what is written in the input text field 
+    // so add one id there 
+    // input  field works with value
+
+    const inputField = document.getElementById('input-field');
+    const searchText = inputField.value; // to make the search dynamic 
 
 
 
+
+})
+
+loadPhone(); // calling the function
