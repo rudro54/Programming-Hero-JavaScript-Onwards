@@ -112,8 +112,17 @@ const displayPhones = phones => {
     //console.log(phones); // to check for first time then its deactivated
     const phonesContainer = document.getElementById('phone-container');
     phonesContainer.innerText = ``; // so that previous appended ones not visible
-    // display only 20 phones 
-    phones = phones.slice(0, 20)
+    // display only 10 phones 
+    const showAll = document.getElementById('show-all');
+    if (phones.length > 10) {
+        phones = phones.slice(0, 10);
+        showAll.classList.remove('d-none');
+    }
+    else {
+        showAll.classList.add('d-none');
+    }
+
+
     // display no phone found
     const noPhone = document.getElementById('not-found-message');
     // no phone found means phones array length is 0
@@ -144,8 +153,6 @@ const displayPhones = phones => {
         `;
 
         phonesContainer.appendChild(phoneDiv);
-
-
 
 
     });
@@ -188,6 +195,17 @@ const displayPhones = phones => {
 // this will be handled by when searching starts and ends
 // by default d-none will suffice
 // if you need to show something or unshow that is called toggle
+// now about show all , what we are doing now is taking whole from api 
+// then slice that and showing , but good way should be giving api 
+// instruction to get 10 only 
+// then while clicking show all the dyanmic api will deduct old instrution
+// and show the rest but this is not possible upto now (first approach)
+// second approach could be taking the whole bunch and storing in one global variable
+//then when needed using them 
+// we wont use this 
+// we will use just for now a third approach just for our limitation
+// third way is recall the whole bunch when clicking the show all button
+// and removing the old 10 only 
 
 // handle search button click
 document.getElementById('btn-search').addEventListener('click', function () {
