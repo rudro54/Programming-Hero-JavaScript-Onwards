@@ -119,7 +119,18 @@ const loadPhoneDetails = async id => {
 const displayPhoneDetail = phone => {
     console.log(phone);
     const modalTitle = document.getElementById('phoneDetailModalLabel');
-    modalTitle.innerText = phone.name;
+    modalTitle.innerText = phone.name; // as we are not doing dyanamic just 
+    // evey time unique one is created every time click is done
+    const phoneDetails = document.getElementById('phone-details');
+    phoneDetails.innerHTML = `
+       <p>Release Date : ${phone.releaseDate ? phone.releaseDate : 'No Release Date Found'} </p>
+       
+       <p>Others : ${phone.others ? phone.others.Bluetooth : 'No info about others found'} </p>
+    
+    `; // because for phone name one h1 was there so we didnt work much that time
+    // and this time we are goint to put many things so we need innerHTML
+    // append is not needed as the element i mean phone-details already existed
+    // we just need to create innerHTML and put value
 
 }
 
@@ -290,6 +301,7 @@ loadPhone('apple'); // calling the function
 // in case of modal remember one thing button trigger modal is there if you copy 
 // from bootstrap . data-bs-toggle and data-bs-target will be there 
 // copy the button from your html and paste in the js to check what is in their so that
-// you can change without any error 
+// you can change without any error so that data-bs-toogle and target is met
+ // delete save changes position
 
 
