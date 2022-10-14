@@ -287,5 +287,9 @@ loadPhone('apple'); // calling the function
 // now check by clicking and inspecting the button if they recieve the slug value 
 // google search javascript input field enter key event handler
 // will use modal for show details
-// in case of modal remember one thing button trigger and 
+// in case of modal remember one thing button trigger modal is there if you copy 
+// from bootstrap . data-bs-toggle and data-bs-target will be there 
+// copy the button from your html and paste in the js to check what is in their so that
+// you can change without any error 
+
 
