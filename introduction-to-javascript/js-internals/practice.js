@@ -63,7 +63,17 @@ closed or the season is closed by the user
    In javascript waiting for files , api , timeout and
    intervals , promise are asynchronous
 
-   
+*/
+
+/* 
+ Practice task for local storage (level one )
+
+ 1. clear local storage 
+
+
+
+
+
 
 
 */
