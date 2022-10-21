@@ -60,6 +60,10 @@ closed or the season is closed by the user
    7. what are the things that are asynchronous (4 things )
    telecommunication , programming , communicaiton , buffet 
    restaurant order system
+   In javascript waiting for files , api , timeout and
+   intervals , promise are asynchronous
+
+   
 
 
 */
