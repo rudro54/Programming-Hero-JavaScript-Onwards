@@ -1,5 +1,6 @@
 
 print5();
+console.log(print10);
 for (var i = 0; i < 5; i++) {
     // console.log(i);
 }
@@ -8,6 +9,13 @@ for (var i = 0; i < 5; i++) {
 // that is why let should be used 
 //console.log(i);
 
+
 function print5() {
-    console.log('inside print5', 5);  // automatically hoisted
+    console.log('inside print5', 10);  // automatically hoisted
 }
+// but incase of expression hoisting wont be done and error 
+
+const print10 = function () {
+    console.log('inside print5', 5);  // will show error
+    // as expression and can not be hoisted
+} 
