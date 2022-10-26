@@ -40,4 +40,24 @@ let drink = (money > 100 && myVar > 100) ? 'coke' : 'tap-water';
 // console.log(numStr);
 
 // convert string to number 
+// add one +before string 
 
+const input = '560';
+const inputNum = +input;
+//console.log(inputNum);
+
+const isActive = true;
+const showUser = () => console.log('display user');
+const hideUser = () => console.log('hide user');
+
+//isActive ? showUser() : hideUser();
+isActive && showUser(); // shortcut to run one after another 
+// if isActive false then wont check showUser
+// use && if left side is true then the right side will be 
+// executed
+// use || if the left side is false then right side will
+// be executed
+
+isActive || hideUser();
+// toogle boolean
+isActive = !isActive;
