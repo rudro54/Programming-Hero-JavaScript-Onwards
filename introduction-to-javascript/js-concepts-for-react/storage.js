@@ -19,11 +19,34 @@ const addToLocalStorage = () => {
     const value = valueInput.value;
 
     //
-    if (id && value) {
+    if (id && value) { // error checking so that 
+        //empty click wont be added
         localStorage.setItem(id, value);
     }
     idInput.value = '';
     valueInput.value = '';
 }
 
+localStorage.setItem('friends', [75, 78, 98]);
+
 // you can add also can update exiting by this way
+// always stores as json or string so if you want to 
+// add some array or object you need to add that
+// json.stringify way
+
+localStorage.setItem('classmates', JSON.stringify([11, 22, 33, 44]));
+
+// same way for object adding 
+const pen = {
+    price: 10,
+    color: 'black'
+}
+
+localStorage.setItem('pen', JSON.stringify(pen));
+
+// now if you need to get object from localStorage 
+const storePen = localStorage.getItem(pen);
+// this will return a json string object but you
+// wont be able to use this 
+// you need to parse that to use
+const penObj = JSON.parse(storePen);
