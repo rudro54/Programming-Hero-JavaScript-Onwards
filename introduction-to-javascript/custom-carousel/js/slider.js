@@ -19,4 +19,4 @@ setInterval(() => {
     image.setAttribute('src', imageLink);
     imageIndex++;
 
-}, 2000)
+}, 2000);
