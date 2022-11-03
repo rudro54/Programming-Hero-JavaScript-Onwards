@@ -13,7 +13,7 @@ const displayCountries = countries => {
 }
 
 const getCountryHTML = ({ name, flags }) => {
-    // option 3 
+    // option 3
     return `
        <div class = "country">
         <h2>${name.common}</h2>
