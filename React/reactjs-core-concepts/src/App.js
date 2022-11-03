@@ -11,8 +11,8 @@ function App() {
       <Person name="Kuber" nayika="Kopila"></Person>
       <h5>New Component One</h5>
       <h5>New Component Two</h5>
-      <Friend></Friend>
-      <Friend></Friend>
+      <Friend movie="Singam" phone="017777"></Friend>
+      <Friend phone="019999"></Friend>
     </div>
   );
 }
@@ -27,11 +27,11 @@ function Person(props) {
 }
 
 function Friend(props) {
-  console.log(props);
+
   return (
     <div className="container">
-      <h1>Srijat</h1>
-      <p>Profession : Team Lead</p>
+      <h1>Name : {props.movie}</h1>
+      <p>phone : {props.phone}</p>
     </div>
 
   )
