@@ -1,40 +1,40 @@
 import logo from './logo.svg';
 import './App.css';
-const number = 999;
-const singerStyle = {
-  color: 'red',
-  backgroundColor: 'white'
 
-}
 
 const singer = { name: 'Zayed', job: 'Singer' };
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1>JSX</h1>
-        <div className="container">
-          <h3>Learning React!!</h3>
-        </div>
-        <div className="music">
-          <p style={{ color: 'blue', backgroundColor: 'yellow' }}>Name : {number - 111}</p>
-          <p style={singerStyle} >Name : {singer.name} {singer.job}</p>
-        </div>
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Person name="Rubel" nayika="Kajol"></Person>
+      <Person name="Bappa" nayika="Moushumi"></Person>
+      <Person name="Kuber" nayika="Kopila"></Person>
+      <h5>New Component One</h5>
+      <h5>New Component Two</h5>
+      <Friend></Friend>
+      <Friend></Friend>
     </div>
   );
+}
+function Person(props) {
+  return (
+    <div className="person">
+      <h1>{props.name}</h1>
+      <p>Nayika : {props.nayika}</p>
+    </div>
+
+  )
+}
+
+function Friend(props) {
+  console.log(props);
+  return (
+    <div className="container">
+      <h1>Srijat</h1>
+      <p>Profession : Team Lead</p>
+    </div>
+
+  )
 }
 
 export default App;
