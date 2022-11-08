@@ -16,12 +16,11 @@ const Shop = () => {
             <div className="products-container">
                 {
                     products.map(product => <Product
-                        key={product.id}>
-                        product ={product}
-                        {/* creating a props named product
-                       and send the whole product there */}
 
-                    </Product>)
+                        key={product.id}
+                        product={product}
+
+                    ></Product>)
                 }
             </div>
             <div className="cart-container">
