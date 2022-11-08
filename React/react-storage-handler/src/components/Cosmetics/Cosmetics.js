@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'; // importing from node_modules as No ./ is there
+import { getTotalPrice } from '../../utilities/calculate';
 import Cosmetic from '../Cosmetic/Cosmetic';
 //import { add } from '../../utilities/calculate';
 
@@ -16,9 +17,12 @@ const Cosmetics = () => {
 
     }, [])
 
+
+    const total = getTotalPrice(cosmetics);//you must write array
     return (
         <div>
             <h2>Welcome To My Cosmetics World!!</h2>
+            <p>Price :{total}</p>
             {/* <p>Total : {total}</p> */}
             {
                 cosmetics.map(cosmetic => <Cosmetic

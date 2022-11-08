@@ -18,6 +18,8 @@ const Cosmetic = (props) => {
         deleteShoppingCart();
     }
 
+
+
     return (
         <div className='product'>
             <h2>Buy This : {name} </h2>
