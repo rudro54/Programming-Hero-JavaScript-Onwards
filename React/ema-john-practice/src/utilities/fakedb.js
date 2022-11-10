@@ -3,7 +3,7 @@ const addToDb = id => {
     let shoppingCart = {}; // will store as object
     // both key and value , will be update as let
 
-    //get the shopping cart from local storage
+    //get the shopping cart from local  storage
     // before that the below local storage set item is coded
     const storedCart = localStorage.getItem('shopping-cart');
     //.getItem returns null if not there and '1' if there from before
@@ -27,7 +27,7 @@ const addToDb = id => {
         shoppingCart[id] = 1;
     }
     localStorage.setItem('shopping-cart', JSON.stringify(shoppingCart)); // converted to string
-    // after value update local storage will work
+    // after value update local storage will work সেট আইটেম তাই চায়
 }
 
 const removeFromDb = id => {
