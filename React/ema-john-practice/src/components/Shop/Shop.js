@@ -14,6 +14,12 @@ const Shop = () => {
     }, [])
     // this last array is dependency injection 
 
+    // this was supposed to be in product but 
+    // now we are using here as js cant send data upward
+    const handleAddToCart = (product) => {
+        console.log(product);
+    }
+
     return (
         <div className='shop-container'>
             <div className="products-container">
@@ -21,6 +27,7 @@ const Shop = () => {
                     products.map(product => <Product
                         key={product.id}
                         product={product}
+                        handleAddToCart={handleAddToCart}
 
 
                     ></Product>)
