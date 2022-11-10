@@ -5,6 +5,7 @@ import './Shop.css';
 const Shop = () => {
     //loading data use state 
     const [products, setProducts] = useState([]);
+    const [cart, setCart] = useState([]);
     // now need useState to fetch data
     useEffect(() => {
 
@@ -17,7 +18,8 @@ const Shop = () => {
     // this was supposed to be in product but 
     // now we are using here as js cant send data upward
     const handleAddToCart = (product) => {
-        console.log(product);
+        const newCart = [...cart, product];
+        setCart(newCart);
     }
 
     return (
@@ -35,6 +37,7 @@ const Shop = () => {
             </div>
             <div className="cart-container">
                 <h1>order summary</h1>
+                <p>Selected Items : {cart.length}</p>
             </div>
         </div>
     );
