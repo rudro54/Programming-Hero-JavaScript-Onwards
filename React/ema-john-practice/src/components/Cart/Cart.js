@@ -2,8 +2,9 @@ import React from 'react';
 import './Cart.css';
 
 const Cart = ({ cart }) => {
+    //console.log(cart);
     let total = 0; // as the value will be updated you can use reducer here
-    let shipping = 0;
+    let shipping = 0; // update able
     for (const product of cart) {
         total = total + product.price;
         shipping = shipping + product.shipping;
