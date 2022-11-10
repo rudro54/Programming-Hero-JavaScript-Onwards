@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { addToDb, getStoredCart, } from '../../utilities/fakedb';
 import Cart from '../Cart/Cart';
 import Product from '../Product/Product';
 import './Shop.css';
@@ -16,11 +17,41 @@ const Shop = () => {
     }, [])
     // this last array is dependency injection 
 
+    useEffect(() => {
+
+        const storedCart = getStoredCart();
+        // inside object we are looping with for--in
+        const savedCart = [];
+        for (const id in storedCart) {
+            const addedProduct = products.find(product => product.id === id);
+            if (addedProduct) {
+                const quantity = storedCart[id];
+                addedProduct.quantity = quantity;
+                savedCart.push(addedProduct);
+            }
+        }
+        setCart(savedCart);
+
+
+    }, [products])
+
+
     // this was supposed to be in product but 
     // now we are using here as js cant send data upward
-    const handleAddToCart = (product) => {
-        const newCart = [...cart, product];
+    const handleAddToCart = (selectedProduct) => {
+        const exists = cart.find(product => product.id === selectedProduct.id);
+        let newCart = [];
+        if (!exists) {
+            selectedProduct.quantity = 1;
+            newCart = [...Cart, selectedProduct];
+        }
+        else {
+            const rest = cart.filter(product => product.id !== selectedProduct.id);
+            exists.quantity = exists.quantity + 1;
+            newCart = [...rest, exists];
+        }
         setCart(newCart);
+        addToDb(selectedProduct.id);
     }
 
     return (
