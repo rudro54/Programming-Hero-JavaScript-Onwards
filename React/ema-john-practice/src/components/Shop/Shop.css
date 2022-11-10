@@ -3,6 +3,11 @@
     display: grid;
     grid-template-columns: 4fr 1fr;
     /* as there is no repeat */
+}
 
-
+/* as we are showing all products in shop.js */
+.products-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 45px;
 }

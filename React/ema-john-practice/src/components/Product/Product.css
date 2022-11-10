@@ -1,0 +1,41 @@
+.product {
+    width: 300px;
+    height: 510px;
+    border: 1px solid salmon;
+    border-radius: 8px;
+    padding: 7px;
+    position: relative;
+    align-items: center;
+}
+
+
+
+.product-info {
+    margin: 14px;
+}
+
+
+
+
+.product img {
+    width: 286px;
+    height: 286px;
+    padding: 5px;
+    margin: 7px;
+    border-radius: 8px;
+
+}
+
+.product-info p {
+    margin-bottom: 0;
+}
+
+.btn-cart {
+    width: 90%;
+    background-color: orange;
+    border: none;
+    border-radius: 0px 0px 8px 8px;
+    position: absolute;
+    bottom: 0;
+
+}
