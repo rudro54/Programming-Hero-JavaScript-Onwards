@@ -39,11 +39,12 @@ const Shop = () => {
     // this was supposed to be in product but 
     // now we are using here as js cant send data upward
     const handleAddToCart = (selectedProduct) => {
-        const exists = cart.find(product => product.id === selectedProduct.id);
         let newCart = [];
+        const exists = cart.find(product => product.id === selectedProduct.id);
+
         if (!exists) {
             selectedProduct.quantity = 1;
-            newCart = [...Cart, selectedProduct];
+            newCart = [...cart, selectedProduct];
         }
         else {
             const rest = cart.filter(product => product.id !== selectedProduct.id);
