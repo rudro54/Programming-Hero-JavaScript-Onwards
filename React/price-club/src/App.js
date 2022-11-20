@@ -1,6 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
+import Pricing from './components/Pricing/Pricing';
+import AssignmentMarks from './components/AssignmentMarks/AssignmentMarks';
 
 
 function App() {
@@ -9,6 +11,8 @@ function App() {
       <NavBar></NavBar>
       <h1 className='text-4xl font-bold'>this is a big big header</h1>
       <p>this is just a paragraph</p>
+      <Pricing></Pricing>
+      <AssignmentMarks></AssignmentMarks>
     </div>
   );
 }
