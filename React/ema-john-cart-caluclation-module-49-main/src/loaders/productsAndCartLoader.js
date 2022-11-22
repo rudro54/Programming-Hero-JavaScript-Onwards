@@ -1,4 +1,5 @@
-import { getStoredCart } from "../utilities/fakedb";
+import { getStoredCart } from '../utilities/fakedb';
+
 
 export const productsAndCartLoader = async () => {
     //get products data 
@@ -8,16 +9,19 @@ export const productsAndCartLoader = async () => {
     // get cart
 
     const savedCart = getStoredCart();
-    const previousCart = [];
-    console.log(products);
+    const initialCart = [];
+
+    //console.log(products);
     for (const id in savedCart) {
-        const addedProduct = products.find(product => product.id === id);
+        const addedProduct = products.find(product => product.id === id)
         if (addedProduct) {
             const quantity = savedCart[id];
-            previousCart.push(addedProduct);
+            addedProduct.quantity = quantity;
+            initialCart.push(addedProduct);
         }
     }
-    return { products, previousCart };
+
+    return { products: products, initialCart: initialCart };
 
 
 }
