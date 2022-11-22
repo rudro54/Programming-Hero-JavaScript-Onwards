@@ -11,8 +11,20 @@ const Home = () => {
     const [cart, setCart] = useState([]);
 
     const handleAddToCart = (shirt) => {
-        const newCart = [...cart, shirt];
-        setCart(newCart);
+        const exists = cart.find(ts => ts._id === shirt._id)
+        if (exists) {
+            alert('item already taken')
+        } else {
+            const newCart = [...cart, shirt];
+            setCart(newCart);
+            // alert('added successfully')
+
+        }
+    }
+
+    const handleRemoveItem = shirt => {
+        const remaining = cart.filter(ts => ts._id !== shirt._id);
+        setCart(remaining);
     }
 
 
@@ -21,7 +33,7 @@ const Home = () => {
             <div className="shirt-container">
                 {
                     shirts.map(shirt => <Shirt
-                        key={shirt.id}
+                        key={shirt._id}
                         shirt={shirt}
                         handleAddToCart={handleAddToCart}
                     >
@@ -29,7 +41,10 @@ const Home = () => {
                 }
             </div>
             <div className="cart-container">
-                <Cart cart={cart}></Cart>
+                <Cart
+                    cart={cart}
+                    handleRemoveItem={handleRemoveItem}
+                ></Cart>
             </div>
         </div>
     );
