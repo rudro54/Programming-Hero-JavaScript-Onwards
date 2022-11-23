@@ -7,7 +7,7 @@ const Myself = ({ house, ring }) => {
             <h4>Myself</h4>
             <p><small>House :{house}</small></p>
             <section>
-                <Special ring={ring}></Special>
+                <Special ></Special>
             </section>
         </div>
     );
