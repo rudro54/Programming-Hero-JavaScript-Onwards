@@ -3,6 +3,7 @@ import './App.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Main from './layout/Main';
 import Home from './components/Home';
+import Phone from './components/Phone';
 
 function App() {
   const router = createBrowserRouter([
@@ -14,7 +15,10 @@ function App() {
           path: '/',
           element: <Home></Home>,
           loader: () => fetch('http://localhost:4000/phones')
-
+        },
+        {
+          path: '/phones/:id',
+          element: <Phone></Phone>
         }
 
 
