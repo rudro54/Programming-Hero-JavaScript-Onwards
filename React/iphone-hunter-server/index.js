@@ -1,7 +1,11 @@
 const express = require('express');
 const app = express();
+const cors = require('cors');
 const port = 4000;
 const phones = require('./phones.json');
+app.use(cors());
+
+
 
 app.get('/', (req, res) => {
     res.send('Look Mama Kemne KI !! iPhone server is running');
